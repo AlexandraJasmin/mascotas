@@ -1,0 +1,77 @@
+:root {
+  font-family: Arial, Helvetica, sans-serif;
+  color: #222;
+  background-color: #ffffff;
+
+  --verde: #769382;
+  --beige: #d9cfb9;
+  --gris-suave: #c0c3b9;
+  --crema: #f3efe3;
+  --rojo: #d9534f;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  background-color: #ffffff;
+}
+
+h1,
+h2,
+h3 {
+  margin: 0;
+}
+
+button {
+  cursor: pointer;
+  border: none;
+  border-radius: 8px;
+  padding: 10px 16px;
+  font-size: 14px;
+}
+
+input {
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  font-size: 14px;
+  width: 100%;
+  box-sizing: border-box;
+  background-color: white;
+}
+
+.contenedor {
+  max-width: 1200px;
+  margin: 40px auto;
+  padding: 20px;
+}
+
+.descripcion {
+  color: #555;
+  margin: 10px 0 25px 0;
+}
+
+.layout-principal {
+  display: grid;
+  grid-template-columns: 1.4fr 1fr;
+  gap: 20px;
+  align-items: start;
+}
+
+.seccion {
+  background: var(--crema);
+  border-radius: 14px;
+  padding: 20px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+}
+
+.error-global {
+  color: var(--rojo);
+  font-weight: bold;
+}
+
+@media (max-width: 900px) {
+  .layout-principal {
+    grid-template-columns: 1fr;
+  }
+}
