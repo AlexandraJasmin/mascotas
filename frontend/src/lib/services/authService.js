@@ -1,4 +1,6 @@
-const AUTH_URL = `${import.meta.env.PUBLIC_API_URL}/auth/login`;
+import { PUBLIC_API_URL } from '$env/static/public';
+
+const AUTH_URL = `${PUBLIC_API_URL}/auth/login`;
 
 export async function loginUsuario(datosLogin) {
   const response = await fetch(AUTH_URL, {

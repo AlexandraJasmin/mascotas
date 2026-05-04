@@ -1,13 +1,16 @@
-const API_URL = `${import.meta.env.PUBLIC_API_URL}/mascotas`;
+import { PUBLIC_API_URL } from '$env/static/public';
+
+const API_URL = `${PUBLIC_API_URL}/mascotas`;
 
 export async function obtenerMascotas() {
   const response = await fetch(API_URL);
+  const data = await response.json();
 
   if (!response.ok) {
-    throw new Error('Error al obtener mascotas');
+    throw new Error(data.mensaje || 'Error al obtener mascotas');
   }
 
-  return await response.json();
+  return data;
 }
 
 export async function crearMascota(mascota) {
@@ -19,11 +22,13 @@ export async function crearMascota(mascota) {
     body: JSON.stringify(mascota)
   });
 
+  const data = await response.json();
+
   if (!response.ok) {
-    throw new Error('Error al crear mascota');
+    throw new Error(data.mensaje || 'Error al crear mascota');
   }
 
-  return await response.json();
+  return data;
 }
 
 export async function actualizarMascota(id, mascota) {
@@ -35,11 +40,13 @@ export async function actualizarMascota(id, mascota) {
     body: JSON.stringify(mascota)
   });
 
+  const data = await response.json();
+
   if (!response.ok) {
-    throw new Error('Error al actualizar mascota');
+    throw new Error(data.mensaje || 'Error al actualizar mascota');
   }
 
-  return await response.json();
+  return data;
 }
 
 export async function eliminarMascota(id) {
@@ -47,9 +54,11 @@ export async function eliminarMascota(id) {
     method: 'DELETE'
   });
 
+  const data = await response.json();
+
   if (!response.ok) {
-    throw new Error('Error al eliminar mascota');
+    throw new Error(data.mensaje || 'Error al eliminar mascota');
   }
 
-  return await response.json();
+  return data;
 }
