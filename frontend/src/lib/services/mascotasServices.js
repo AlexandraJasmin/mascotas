@@ -1,4 +1,4 @@
-const API_URL = 'http://localhost:3000/mascotas';
+const API_URL = `${import.meta.env.PUBLIC_API_URL}/mascotas`;
 
 export async function obtenerMascotas() {
   const response = await fetch(API_URL);
